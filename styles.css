@@ -1,10 +1,10 @@
 @import "nv.d3.css";
 
-.nv-x.tick text {
+.nv-x text {
   text-anchor: middle;
 }
 
-.nv-y.tick text {
+.nv-y text {
   text-anchor: end;
 }
 
