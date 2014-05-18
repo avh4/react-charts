@@ -22,8 +22,8 @@ function randomData(groups, points) { //# groups,# points per group
 
     for (var j = 0; j < points; j++) {
       data[i].values.push({
-        x: random()
-      , y: random()
+        x: random()*10
+      , y: random()*10
       , size: Math.random()   //Configure the size of each scatter point
       , shape: (Math.random() > 0.95) ? shapes[j % 6] : "circle"  //Configure the shape of each scatter point.
       });
@@ -33,14 +33,27 @@ function randomData(groups, points) { //# groups,# points per group
   return data;
 }
 
+function determineRange(data, prop) {
+  var min = data[0].values[0][prop];
+  var max = data[0].values[0][prop];
+  for (var i = 0; i < data.length; i++) {
+    for (var j = 0; j < data[i].values.length; j++) {
+      var v = data[i].values[j][prop];
+      if (v < min) min = v;
+      if (v > max) max = v;
+    }
+  }
+  return [min, max];
+}
+
 var App = React.createClass({
   render: function() {
     var data = randomData(4, 40);
 
     var width = 600;
     var height = 420;
-    var xRange = [-3.41, 2.47];
-    var yRange = [-2.47, 2.25];
+    var xRange = determineRange(data, 'x');
+    var yRange = determineRange(data, 'y');
     var coord = function(x, y) {
       var xPercent = (x - xRange[0]) / (xRange[1]-xRange[0]);
       var yPercent = (y - yRange[0]) / (yRange[1]-yRange[0]);
