@@ -6,9 +6,36 @@ var React = require('react');
 var XAxis = require('./XAxis.js');
 var YAxis = require('./YAxis.js');
 var Series = require('./Series.js');
+var randgen = require('randgen');
+
+function randomData(groups, points) { //# groups,# points per group
+  var data = [],
+      shapes = ['circle', 'cross', 'triangle-up', 'triangle-down', 'diamond', 'square'],
+      random = randgen.rnorm;
+
+  for (var i = 0; i < groups; i++) {
+    data.push({
+      key: 'Group ' + i,
+      values: []
+    });
+
+    for (var j = 0; j < points; j++) {
+      data[i].values.push({
+        x: random()
+      , y: random()
+      , size: Math.random()   //Configure the size of each scatter point
+      , shape: (Math.random() > 0.95) ? shapes[j % 6] : "circle"  //Configure the shape of each scatter point.
+      });
+    }
+  }
+
+  return data;
+}
 
 var App = React.createClass({
   render: function() {
+    var data = randomData(4, 40);
+
     return <svg viewBox="0 0 500 500">
   <g className="nvd3 nv-wrap nv-scatterChart
     nv-chart-92514" transform="translate(75,30)">
@@ -20,7 +47,7 @@ var App = React.createClass({
         <g className="nvd3 nv-wrap nv-scatter nv-chart-92514">
           <g clip-path="">
             <g className="nv-groups">
-              <Series/>
+              <Series data={data[0].values}/>
               <g
                 className="nv-group nv-series-1">
                 <path
