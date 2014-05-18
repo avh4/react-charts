@@ -22,22 +22,22 @@ g.nv-scatter g.nv-groups g.nv-group {
   fill-opacity: 0.5;
 }
 
-.chart-series.s0, .nv-series-0 {
+.s0, .nv-series-0 {
   stroke: rgb(31, 119, 180);
   fill: rgb(31, 119, 180);  
 }
 
-.chart-series.s1, .nv-series-1 {
+.s1, .nv-series-1 {
   stroke: rgb(255, 127, 14);
   fill: rgb(255, 127, 14);
 }
 
-.chart-series.s2, .nv-series-2 {
+.s2, .nv-series-2 {
   stroke: rgb(44, 160, 44);
   fill: rgb(44, 160, 44);
 }
 
-.chart-series.s3, .nv-series-3 {
+.s3, .nv-series-3 {
   stroke: rgb(214, 39, 40);
   fill: rgb(214, 39, 40);
 }
