@@ -1,3 +1,5 @@
+@import "nv.d3.css";
+
 .nv-x.tick text {
   text-anchor: middle;
 }
