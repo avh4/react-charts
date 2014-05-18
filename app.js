@@ -37,6 +37,19 @@ var App = React.createClass({
   render: function() {
     var data = randomData(4, 40);
 
+    var width = 600;
+    var height = 420;
+    var xRange = [-3.41, 2.47];
+    var yRange = [-2.47, 2.25];
+    var coord = function(x, y) {
+      var xPercent = (x - xRange[0]) / (xRange[1]-xRange[0]);
+      var yPercent = (y - yRange[0]) / (yRange[1]-yRange[0]);
+      return {
+        x: xPercent * width,
+        y: yPercent * height
+      };
+    }
+
     return <svg viewBox="0 0 500 500">
   <g className="nvd3 nv-wrap nv-scatterChart
     nv-chart-92514" transform="translate(75,30)">
@@ -44,17 +57,17 @@ var App = React.createClass({
       <XAxis/>
       <YAxis/>
       <g>
-        <Series className="chart-series s0" data={data[0].values}/>
-        <Series className="chart-series s1" data={data[1].values}/>
-        <Series className="chart-series s2" data={data[2].values}/>
-        <Series className="chart-series s3" data={data[3].values}/>
+        <Series className="chart-series s0" data={data[0].values} coord={coord}/>
+        <Series className="chart-series s1" data={data[1].values} coord={coord}/>
+        <Series className="chart-series s2" data={data[2].values} coord={coord}/>
+        <Series className="chart-series s3" data={data[3].values} coord={coord}/>
       </g>
       <g className="nv-distWrap">
         <g transform="translate(0,420)">
-          <Distribution className="s0" data={data[0].values}/>
-          <Distribution className="s1" data={data[1].values}/>
-          <Distribution className="s2" data={data[2].values}/>
-          <Distribution className="s3" data={data[3].values}/>
+          <Distribution className="s0" data={data[0].values} coord={coord}/>
+          <Distribution className="s1" data={data[1].values} coord={coord}/>
+          <Distribution className="s2" data={data[2].values} coord={coord}/>
+          <Distribution className="s3" data={data[3].values} coord={coord}/>
         </g>
         <g className="nv-distributionY"
         transform="translate(-8,0)"><g className="nvd3 nv-distribution"
