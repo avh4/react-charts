@@ -20,9 +20,9 @@ var coord = function(x, y) {
 module.exports = React.createClass({
   render: function() {
     var data = this.props.data;
-    var paths = data.map(function(d) {
+    var paths = data.map(function(d, i) {
       var p = coord(d.x, d.y);
-      return <circle cx={p.x} cy={p.y} r={d.size * 15}/>
+      return <circle cx={p.x} cy={p.y} r={d.size * 15} key={i}/>
     });
     return <g className={this.props.className}>{paths}</g>;
 }});
