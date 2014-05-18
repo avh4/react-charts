@@ -47,10 +47,10 @@ var App = React.createClass({
         <g className="nvd3 nv-wrap nv-scatter nv-chart-92514">
           <g clip-path="">
             <g className="nv-groups">
-              <Series i="0" data={data[0].values}/>
-              <Series i="1" data={data[1].values}/>
-              <Series i="2" data={data[2].values}/>
-              <Series i="3" data={data[3].values}/>
+              <Series className="chart-series s0" data={data[0].values}/>
+              <Series className="chart-series s1" data={data[1].values}/>
+              <Series className="chart-series s2" data={data[2].values}/>
+              <Series className="chart-series s3" data={data[3].values}/>
             </g>
             <g className="nv-point-paths"
               clip-path="url(#nv-points-clip-92514)">
