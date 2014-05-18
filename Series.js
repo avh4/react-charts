@@ -24,5 +24,6 @@ module.exports = React.createClass({
       var p = coord(d.x, d.y);
       return <circle cx={p.x} cy={p.y} r={d.size * 15}/>
     });
-    return <g className="nv-group nv-series-0">{paths}</g>;
+    var className = "chart-series chart-series-" + this.props.i;
+    return <g className={className}>{paths}</g>;
 }});

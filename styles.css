@@ -17,7 +17,12 @@ g.nv-scatter g.nv-groups g.nv-group {
   fill-opacity: 0.5;
 }
 
-.nv-series-0 {
+.chart-series {
+  stroke-opacity: 1;
+  fill-opacity: 0.5;
+}
+
+.chart-series-0 {
   stroke: rgb(31, 119, 180);
   fill: rgb(31, 119, 180);  
 }
