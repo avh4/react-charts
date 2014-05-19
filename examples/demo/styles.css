@@ -37,6 +37,10 @@ g.nv-scatter g.nv-groups g.nv-group {
   fill-opacity: 0.5;
 }
 
+.chart-series circle:hover {
+  fill-opacity: 1;
+}
+
 .s0, .nv-series-0 {
   stroke: rgb(31, 119, 180);
   fill: rgb(31, 119, 180);  
