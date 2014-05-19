@@ -1,15 +1,37 @@
 {
+  "name": "react-chart",
+  "version": "0.0.1",
+  "keywords": [
+    "react",
+    "chart",
+    "graph",
+    "plot",
+    "svg"
+  ],
+  "homepage": "http://github.com/avh4/react-chart",
+  "bugs": "https://github.com/avh4/react-chart/issues",
+  "license": "MIT",
+  "main": "target/main/js/index.js",
+  "files": ["target/main/js"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avh4/react-chart.git"
+  },
   "scripts": {
     "build": "./node_modules/.bin/webpack app.js bundle.js",
     "test": "./node_modules/.bin/jasmine-node ./",
-    "watch": "./node_modules/.bin/jasmine-node --autotest --color spec src"
+    "watch": "./node_modules/.bin/jasmine-node --autotest --color spec src",
+    "prepublish": "rm -Rf target && mkdir target && ./node_modules/.bin/jsx src target"
+  },
+  "dependencies": {
+    "react": "~0.10.0",
+    "randgen": "^0.1.0",
+    "numeral": "^1.5.3"
   },
   "devDependencies": {
     "jsx-loader": "~0.10.0",
-    "react": "~0.10.0",
     "webpack": "~1.0.0",
     "jasmine-node": "^1.14.3",
-    "randgen": "^0.1.0",
-    "numeral": "^1.5.3"
+    "react-tools": "^0.10.0"
   }
 }
