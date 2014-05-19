@@ -37,7 +37,17 @@ g.nv-scatter g.nv-groups g.nv-group {
   fill-opacity: 0.5;
 }
 
-.chart-series circle:hover {
+.chart-series g text {
+  opacity: 0;
+  stroke: #000;
+  text-anchor: middle;
+}
+
+.chart-series g:hover text {
+  opacity: 1;
+}
+
+.chart-series g:hover circle {
   fill-opacity: 1;
 }
 

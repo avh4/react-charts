@@ -21,6 +21,7 @@ function randomData(groups, points) { //# groups,# points per group
         x: random()*10
       , y: random()*10
       , size: Math.random()   //Configure the size of each scatter point
+      , name: "Random " + i + "." + j
     });
     }
   }
