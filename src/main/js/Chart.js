@@ -38,7 +38,10 @@ module.exports = React.createClass({
       };
     }
 
-    return <svg viewBox="0 0 500 500">
+    var legendHeight = 30;
+    var yAxisWidth = 70;
+    var xAxisHeight = 50;
+    return <svg viewBox={(-yAxisWidth) + " 0 " + (width+yAxisWidth) + " " + (height+legendHeight+xAxisHeight)}>
       <g className="nvd3 nv-wrap nv-scatterChart" transform="translate(0,30)">
         <XAxis min={xRange[0]} max={xRange[1]} coord={coord}/>
         <YAxis min={yRange[0]} max={yRange[1]} coord={coord}/>
