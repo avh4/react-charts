@@ -9,6 +9,7 @@ module.exports = React.createClass({
   render: function() {
     var chartWidth = 605;
     var textY = 20;
+    var dy = ".71em";
     var format = function(n) { return numeral(n).format('0.00')};
     var lines = [];
     var labels = [];
@@ -16,7 +17,7 @@ module.exports = React.createClass({
       var p = this.props.coord(t, 0);
       var value = format(t);
       lines.push(<line y2="-420" x1={p.x} x2={p.x} key={value}></line>);
-      labels.push(<text y={textY} dy=".71em" x={p.x} key={value}>{value}</text>);
+      labels.push(<text y={textY} dy={dy} x={p.x} key={value}>{value}</text>);
     }, this);
 
     return <g className="chart-axis x" transform="translate(0,420)">
@@ -24,7 +25,7 @@ module.exports = React.createClass({
       <line className="axis" x2={chartWidth}/>
       {labels}
       <text text-anchor="middle" y="36" x={chartWidth/2}>X Value</text>
-      <text dy=".71em" y={textY}>{format(this.props.min)}</text>
-      <text x={chartWidth} dy=".71em" y={textY}>{format(this.props.max)}</text>
+      <text dy={dy} y={textY}>{format(this.props.min)}</text>
+      <text x={chartWidth} dy={dy} y={textY}>{format(this.props.max)}</text>
     </g>;
 }});

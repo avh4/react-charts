@@ -8,7 +8,7 @@ text {
   text-anchor: middle;
 }
 
-.nv-y text {
+.chart-axis.y text {
   text-anchor: end;
 }
 
