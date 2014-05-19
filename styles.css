@@ -1,11 +1,28 @@
 @import "nv.d3.css";
 
-.nv-x text {
+text {
+  font: normal 12px Arial;
+}
+
+.chart-axis.x text {
   text-anchor: middle;
 }
 
 .nv-y text {
   text-anchor: end;
+}
+
+.chart-axis .axis {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .75;
+  shape-rendering: crispEdges;
+}
+
+.chart-axis line {
+  fill: none;
+  stroke: #e5e5e5;
+  shape-rendering: crispEdges;
 }
 
 text.nv-axislabel {
