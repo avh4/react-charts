@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "./node_modules/.bin/webpack app.js bundle.js",
+    "build": "(cd ../.. && npm pack) && npm install ../../react-charts-*.tgz && ./node_modules/.bin/webpack app.js bundle.js",
     "test": "./node_modules/.bin/jasmine-node ./",
     "watch": "./node_modules/.bin/jasmine-node --autotest --color spec src"
   },

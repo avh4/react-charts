@@ -12,4 +12,5 @@ module.exports = React.createClass({
       return <circle cx={p.x} cy={p.y} r={d.size * 15} key={i}/>
     }, this);
     return <g className={this.props.className}>{paths}</g>;
-}});
+  }
+});
