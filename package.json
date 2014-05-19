@@ -1,5 +1,5 @@
 {
-  "name": "react-chart",
+  "name": "react-charts",
   "version": "0.0.1",
   "keywords": [
     "react",
@@ -8,14 +8,14 @@
     "plot",
     "svg"
   ],
-  "homepage": "http://github.com/avh4/react-chart",
-  "bugs": "https://github.com/avh4/react-chart/issues",
+  "homepage": "http://github.com/avh4/react-charts",
+  "bugs": "https://github.com/avh4/react-charts/issues",
   "license": "MIT",
   "main": "target/main/js/index.js",
   "files": ["target/main/js"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/avh4/react-chart.git"
+    "url": "https://github.com/avh4/react-charts.git"
   },
   "scripts": {
     "build": "./node_modules/.bin/webpack app.js bundle.js",

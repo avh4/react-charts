@@ -5,7 +5,7 @@
     "watch": "./node_modules/.bin/jasmine-node --autotest --color spec src"
   },
   "devDependencies": {
-    "react-chart": "0.x.x",
+    "react-charts": "0.x.x",
     "react": "~0.10.0",
     "randgen": "^0.1.0",
     "numeral": "^1.5.3",

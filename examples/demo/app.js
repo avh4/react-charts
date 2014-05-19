@@ -3,7 +3,7 @@
 "use strict";
 
 var React = require('react');
-var Chart = require('react-chart');
+var Chart = require('react-charts');
 var randgen = require('randgen');
 
 function randomData(groups, points) { //# groups,# points per group
