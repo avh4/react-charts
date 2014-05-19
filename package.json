@@ -9,6 +9,7 @@
     "react": "~0.10.0",
     "webpack": "~1.0.0",
     "jasmine-node": "^1.14.3",
-    "randgen": "^0.1.0"
+    "randgen": "^0.1.0",
+    "numeral": "^1.5.3"
   }
 }

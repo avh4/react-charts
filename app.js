@@ -65,7 +65,7 @@ var App = React.createClass({
 
     return <svg viewBox="0 0 500 500">
   <g className="nvd3 nv-wrap nv-scatterChart" transform="translate(0,30)">
-    <XAxis/>
+    <XAxis min={xRange[0]} max={xRange[1]} coord={coord}/>
     <YAxis/>
     <g>
       <Series className="chart-series s0" data={data[0].values} coord={coord}/>
