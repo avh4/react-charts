@@ -56,7 +56,7 @@ var App = React.createClass({
     var yRange = determineRange(data, 'y');
     var coord = function(x, y) {
       var xPercent = (x - xRange[0]) / (xRange[1]-xRange[0]);
-      var yPercent = (y - yRange[0]) / (yRange[1]-yRange[0]);
+      var yPercent = (y - yRange[1]) / (yRange[0]-yRange[1]);
       return {
         x: xPercent * width,
         y: yPercent * height

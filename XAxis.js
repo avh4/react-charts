@@ -45,7 +45,9 @@ function calcTicks(max, min) {
   var niceMin = Math.floor(min / tickSpacing) * tickSpacing;
   var niceMax = Math.ceil(max / tickSpacing) * tickSpacing;
   var ticks = [];
-  for (var i = niceMin + tickSpacing; i < niceMax; i+= tickSpacing) {
+  for (var i = niceMin; i < niceMax; i+= tickSpacing) {
+    if (i < min + tickSpacing*0.2) continue;
+    if (i > max - tickSpacing*0.2) continue;
     ticks.push(i);
   }
   return ticks;
