@@ -22,6 +22,19 @@ function determineRange(data, prop) {
   return [min, max];
 }
 
+function linearScale(v, range, scale) {
+  var percent = (v - range[0]) / (range[1] - range[0]);
+  return percent * scale;
+}
+
+function logScale(v, range, scale) {
+  var lv = Math.log(v) / Math.log(10);
+  var r1 = Math.log(range[1]) / Math.log(10);
+  var r0 = Math.log(range[0]) / Math.log(10);
+  var percent = (lv - r0) / (r1-r0);
+  return percent * scale;
+}
+
 module.exports = React.createClass({
   render: function() {
     var data = this.props.data;
@@ -31,14 +44,12 @@ module.exports = React.createClass({
     var xRange = determineRange(data, 'x');
     var yRange = determineRange(data, 'y');
     var sizeRange = determineRange(data, 'size');
+
     function normalize(d) {
-      var xPercent = (d.x - xRange[0]) / (xRange[1]-xRange[0]);
-      var yPercent = (d.y - yRange[1]) / (yRange[0]-yRange[1]);
-      var sizePercent = (d.size - sizeRange[0]) / (sizeRange[1]-sizeRange[0]);
       return {
-        x: xPercent * width,
-        y: yPercent * height,
-        size: sizePercent * 25
+        x: linearScale(d.x, xRange, width),
+        y: logScale(d.y, [yRange[1], yRange[0]], height),
+        size: linearScale(d.size, sizeRange, 25)
       };
     }
 
