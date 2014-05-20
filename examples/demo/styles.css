@@ -38,13 +38,23 @@ g.nv-scatter g.nv-groups g.nv-group {
 }
 
 .chart-series g text {
-  opacity: 0;
+  font-size: 10px;
   stroke: #000;
+  fill: #000;
+  stroke-width: 0.6;
   text-anchor: middle;
 }
 
-.chart-series g:hover text {
-  opacity: 1;
+.chart-series g text.label-backing {
+  stroke: #fff;
+  fill: #fff;
+  stroke-width: 1.8;
+}
+
+.chart-series g:hover text.label-backing {
+  stroke: #fff;
+  fill: #fff;
+  stroke-width: 3;
 }
 
 .chart-series g:hover circle {

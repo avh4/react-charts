@@ -45,7 +45,7 @@ module.exports = React.createClass({
     var yRange = determineRange(data, 'y');
     var sizeRange = determineRange(data, 'size');
     var minSize = 2;
-    var maxSize = 25;
+    var maxSize = 30;
 
     function normalize(d) {
       return {

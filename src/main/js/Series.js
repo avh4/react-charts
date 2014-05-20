@@ -11,7 +11,8 @@ module.exports = React.createClass({
       var p = this.props.normalize(d);
       return <g>
         <circle cx={p.x} cy={p.y} r={p.size} key={i}/>
-        <text x={p.x} y={p.y}>{d.name}</text>
+        <text className="label-backing" x={p.x} y={p.y} dy="0.3em">{d.name}</text>
+        <text x={p.x} y={p.y} dy="0.3em">{d.name}</text>
       </g>;
     }, this);
     return <g className={this.props.className}>{paths}</g>;
