@@ -28,7 +28,7 @@ module.exports = [
     {
         "name": "Danielle Bradbery",
         "career": "Musician",
-        "knownFrom": "Voice S4 #1",
+        "knownFrom": "The Voice Season 4 Winner",
         "birthYear": 1996,
         "careerStart": 2013,
         "usBreakout": 2013,
@@ -42,7 +42,7 @@ module.exports = [
     {
         "name": "Cassadee Pope",
         "career": "Musician",
-        "knownFrom": "Voice S3 #1",
+        "knownFrom": "The Voice Season 3 Winner",
         "birthYear": 1989,
         "careerStart": 2008,
         "usBreakout": 2012,
@@ -56,7 +56,7 @@ module.exports = [
     {
         "name": "Javier Colon",
         "career": "Musician",
-        "knownFrom": "Voice S1 #1",
+        "knownFrom": "The Voice Season 1 Winner",
         "birthYear": 1978,
         "careerStart": 1999,
         "usBreakout": 2011,

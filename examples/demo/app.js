@@ -2,6 +2,8 @@
 
 "use strict";
 
+require("!style!css!./styles.css");
+
 var React = require('react');
 var Chart = require('react-charts');
 var numeral = require('numeral');
@@ -36,19 +38,18 @@ var App = React.createClass({
   },
   render: function() {
     var d = this.state.detail;
-    return <div>
+    return <div className="root">
       <Chart data={data} onSelect={this.doSelect}/>
-      <div>
+      <div className="tooltip">
         <h3><a href={d.bio}>{d.name}</a></h3>
-        <dl>
-        <dt>Net Worth</dt>
-        <dd>{numeral(d.netWorth2014).format('$0,0')}</dd>
-        <dt>Age</dt>
-        <dd>{d.age}</dd>
-        </dl>
+        {d.career} ({d.knownFrom})<br/>
+        Net Worth: <a href={d.netWorth}>{numeral(d.netWorth2014).format('$0,0')}</a><br/>
+        Age: {d.age}<br/>
+        Career Length: {d.careerLength} years<br/>
       </div>
     </div>;
   }
 })
 
-React.renderComponent(<App/>, document.getElementById('root'));
+var elements = document.getElementsByClassName(ChartData[0]);
+React.renderComponent(<App/>, elements[0]);

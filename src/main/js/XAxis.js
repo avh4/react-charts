@@ -32,7 +32,7 @@ module.exports = React.createClass({
       <g className="lines">{lines}</g>
       <line className="axis" x2={chartWidth}/>
       {labels}
-      <text text-anchor="middle" y="36" x={chartWidth/2}>X Value</text>
+      <text text-anchor="middle" y="36" x={chartWidth/2}>Age</text>
       <text dy={dy} y={textY}>{format(this.props.min)}</text>
       <text x={textX || chartWidth} dy={dy} y={textY || 0}>{format(this.props.max)}</text>
     </g>;

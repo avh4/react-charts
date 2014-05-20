@@ -11,6 +11,8 @@
     "numeral": "^1.5.3",
     "jsx-loader": "~0.10.0",
     "webpack": "~1.0.0",
-    "jasmine-node": "^1.14.3"
+    "jasmine-node": "^1.14.3",
+    "style-loader": "^0.6.3",
+    "css-loader": "^0.6.12"
   }
 }

@@ -1,106 +1,19 @@
-svg {
-  width: 70%;
-  float: left;
+.root {
+  position: relative;
+  width: 646px;
+  height: 461px;
 }
 
-text {
-  font: normal 12px Arial;
+.root .tooltip {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.88);
+  border: 1px solid gray;
+  border-radius: 7px;
+  padding: 10px;
+  right: 0;
+  bottom: 0;
 }
 
-.chart-axis.x text {
-  text-anchor: middle;
-}
-
-.chart-axis.y text {
-  text-anchor: end;
-}
-
-.chart-axis .axis {
-  fill: none;
-  stroke: #000;
-  stroke-opacity: .75;
-  shape-rendering: crispEdges;
-}
-
-.chart-axis line {
-  fill: none;
-  stroke: #e5e5e5;
-  shape-rendering: crispEdges;
-}
-
-text.nv-axislabel {
-  text-anchor: middle;
-}
-
-g.nv-scatter g.nv-groups g.nv-group {
-  stroke-opacity: 1;
-  fill-opacity: 0.5;
-}
-
-.chart-series {
-  stroke-opacity: 1;
-  fill-opacity: 0.5;
-}
-
-.chart-series g text {
-  font-size: 10px;
-  stroke: #000;
-  fill: #000;
-  stroke-width: 0.6;
-  text-anchor: middle;
-}
-
-.chart-series g text.label-backing {
-  stroke: #fff;
-  fill: #fff;
-  stroke-width: 1.8;
-}
-
-.chart-series g:hover text.label-backing {
-  stroke: #fff;
-  fill: #fff;
-  stroke-width: 3;
-}
-
-.chart-series g:hover circle {
-  fill-opacity: 1;
-}
-
-.s0 {
-  stroke: rgb(31, 119, 180);
-  fill: rgb(31, 119, 180);  
-}
-
-.s1 {
-  stroke: rgb(214, 39, 40);
-  fill: rgb(214, 39, 40);
-}
-
-.s2 {
-  stroke: rgb(255, 127, 14);
-  fill: rgb(255, 127, 14);
-}
-
-.s3 {
-  stroke: rgb(44, 160, 44);
-  fill: rgb(44, 160, 44);
-}
-
-.s4 {
-  stroke: rgb(155, 30, 154);
-  fill: rgb(155, 30, 154);
-}
-
-.s5 {
-  stroke: rgb(0, 153, 199);
-  fill: rgb(0, 153, 199);
-}
-
-.s6 {
-  stroke: rgb(226, 76, 118);
-  fill: rgb(226, 76, 118);
-}
-
-circle.nv-legend-symbol {
-  stroke-width: 2px;
+.root .tooltip h3 {
+  margin: 0;
 }
