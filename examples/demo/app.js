@@ -4,31 +4,26 @@
 
 var React = require('react');
 var Chart = require('react-charts');
-var randgen = require('randgen');
 
-function randomData(groups, points) { //# groups,# points per group
-  var data = [];
-  var random = randgen.rnorm;
-
-  for (var i = 0; i < groups; i++) {
-    data.push({
-      key: 'Group ' + i,
-      values: []
-    });
-
-    for (var j = 0; j < points; j++) {
-      data[i].values.push({
-        x: random()*10
-      , y: random()*10
-      , size: Math.random()   //Configure the size of each scatter point
-      , name: "Random " + i + "." + j
-    });
+function processData(input, groupField, xField, yField, sizeField) {
+  var groups = {};
+  var groupOrder = [];
+  input.forEach(function(d) {
+    var groupName = d[groupField];
+    var group = groups[groupName];
+    if (!group) {
+      group = {name: groupName, values: []};
+      groupOrder.push(groupName);
     }
-  }
-
-  return data;
+    d.x = d[xField];
+    d.y = d[yField];
+    d.size = d[sizeField];
+    group.values.push(d);
+    groups[groupName] = group;
+  });
+  return groupOrder.map(function(g) { return groups[g] });
 }
 
-var data = randomData(4, 40);
+var data = processData(require('./data.js'), 'career', 'age', 'netWorth2014', 'careerLength');
 
 React.renderComponent(<Chart data={data}/>, document.getElementById('root'));
