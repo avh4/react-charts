@@ -62,7 +62,7 @@ module.exports = React.createClass({
     var textY = isX ? 20 : undefined;
     var textX = isX ? undefined : -10;
     var dy = isX ? ".71em" : ".32em";
-    var format = function(n) { return numeral(n).format('0.00')};
+    var format = function(n) { return numeral(n).format(this.props.format || '0,0.00')}.bind(this);
     var lines = [];
     var labels = [];
     calcTicks(this.props.max, this.props.min).map(function(t) {

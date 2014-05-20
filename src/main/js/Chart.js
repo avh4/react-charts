@@ -46,8 +46,8 @@ module.exports = React.createClass({
     var xAxisHeight = 50;
     return <svg viewBox={(-yAxisWidth) + " 0 " + (width+yAxisWidth) + " " + (height+legendHeight+xAxisHeight)}>
       <g className="nvd3 nv-wrap nv-scatterChart" transform="translate(0,30)">
-        <XAxis min={xRange[0]} max={xRange[1]} normalize={normalize}/>
-        <YAxis min={yRange[0]} max={yRange[1]} normalize={normalize}/>
+        <XAxis min={xRange[0]} max={xRange[1]} normalize={normalize} format="0"/>
+        <YAxis min={yRange[0]} max={yRange[1]} normalize={normalize} format="$0,0"/>
         <g>
           <Series className="chart-series s0" data={data[0].values} normalize={normalize}/>
           <Series className="chart-series s1" data={data[1].values} normalize={normalize}/>
