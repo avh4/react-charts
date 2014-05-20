@@ -29,12 +29,15 @@ module.exports = React.createClass({
     var height = 420;
     var xRange = determineRange(data, 'x');
     var yRange = determineRange(data, 'y');
-    var coord = function(x, y) {
-      var xPercent = (x - xRange[0]) / (xRange[1]-xRange[0]);
-      var yPercent = (y - yRange[1]) / (yRange[0]-yRange[1]);
+    var sizeRange = determineRange(data, 'size');
+    function normalize(d) {
+      var xPercent = (d.x - xRange[0]) / (xRange[1]-xRange[0]);
+      var yPercent = (d.y - yRange[1]) / (yRange[0]-yRange[1]);
+      var sizePercent = (d.size - sizeRange[0]) / (sizeRange[1]-sizeRange[0]);
       return {
         x: xPercent * width,
-        y: yPercent * height
+        y: yPercent * height,
+        size: sizePercent * 25
       };
     }
 
@@ -43,25 +46,25 @@ module.exports = React.createClass({
     var xAxisHeight = 50;
     return <svg viewBox={(-yAxisWidth) + " 0 " + (width+yAxisWidth) + " " + (height+legendHeight+xAxisHeight)}>
       <g className="nvd3 nv-wrap nv-scatterChart" transform="translate(0,30)">
-        <XAxis min={xRange[0]} max={xRange[1]} coord={coord}/>
-        <YAxis min={yRange[0]} max={yRange[1]} coord={coord}/>
+        <XAxis min={xRange[0]} max={xRange[1]} normalize={normalize}/>
+        <YAxis min={yRange[0]} max={yRange[1]} normalize={normalize}/>
         <g>
-          <Series className="chart-series s0" data={data[0].values} coord={coord}/>
-          <Series className="chart-series s1" data={data[1].values} coord={coord}/>
-          <Series className="chart-series s2" data={data[2].values} coord={coord}/>
-          <Series className="chart-series s3" data={data[3].values} coord={coord}/>
+          <Series className="chart-series s0" data={data[0].values} normalize={normalize}/>
+          <Series className="chart-series s1" data={data[1].values} normalize={normalize}/>
+          <Series className="chart-series s2" data={data[2].values} normalize={normalize}/>
+          <Series className="chart-series s3" data={data[3].values} normalize={normalize}/>
         </g>
         <g transform="translate(0,420)">
-          <Distribution className="s0" y1="0" y2="8" data={data[0].values} coord={coord}/>
-          <Distribution className="s1" y1="0" y2="8" data={data[1].values} coord={coord}/>
-          <Distribution className="s2" y1="0" y2="8" data={data[2].values} coord={coord}/>
-          <Distribution className="s3" y1="0" y2="8" data={data[3].values} coord={coord}/>
+          <Distribution className="s0" y1="0" y2="8" data={data[0].values} normalize={normalize}/>
+          <Distribution className="s1" y1="0" y2="8" data={data[1].values} normalize={normalize}/>
+          <Distribution className="s2" y1="0" y2="8" data={data[2].values} normalize={normalize}/>
+          <Distribution className="s3" y1="0" y2="8" data={data[3].values} normalize={normalize}/>
         </g>
         <g transform="translate(-8,0)">
-          <Distribution className="s0" x1="0" x2="8" data={data[0].values} coord={coord}/>
-          <Distribution className="s1" x1="0" x2="8" data={data[1].values} coord={coord}/>
-          <Distribution className="s2" x1="0" x2="8" data={data[2].values} coord={coord}/>
-          <Distribution className="s3" x1="0" x2="8" data={data[3].values} coord={coord}/>
+          <Distribution className="s0" x1="0" x2="8" data={data[0].values} normalize={normalize}/>
+          <Distribution className="s1" x1="0" x2="8" data={data[1].values} normalize={normalize}/>
+          <Distribution className="s2" x1="0" x2="8" data={data[2].values} normalize={normalize}/>
+          <Distribution className="s3" x1="0" x2="8" data={data[3].values} normalize={normalize}/>
         </g>
         <g className="nv-legendWrap"
           transform="translate(0,-30)"><g className="nvd3 nv-legend"

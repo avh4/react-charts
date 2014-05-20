@@ -66,7 +66,7 @@ module.exports = React.createClass({
     var lines = [];
     var labels = [];
     calcTicks(this.props.max, this.props.min).map(function(t) {
-      var p = this.props.coord(t, t);
+      var p = this.props.normalize({x: t, y: t, size: 0});
       var value = format(t);
       if (isX) {
         lines.push(<line y2={-chartHeight} x1={p.x} x2={p.x} key={value}></line>);

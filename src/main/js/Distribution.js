@@ -8,7 +8,7 @@ module.exports = React.createClass({
   render: function() {
     var data = this.props.data;
     var paths = data.map(function(d, i) {
-      var p = this.props.coord(d.x, d.y);
+      var p = this.props.normalize(d);
       return <line key={i}
         x1={this.props.x1 || p.x}
         x2={this.props.x2 || p.x}
