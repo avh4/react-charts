@@ -6,7 +6,7 @@
   },
   "devDependencies": {
     "react-charts": "0.x.x",
-    "react": "~0.10.0",
+    "react": "0.11.0-alpha",
     "randgen": "^0.1.0",
     "numeral": "^1.5.3",
     "jsx-loader": "~0.10.0",
