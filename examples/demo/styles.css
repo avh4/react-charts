@@ -51,24 +51,39 @@ g.nv-scatter g.nv-groups g.nv-group {
   fill-opacity: 1;
 }
 
-.s0, .nv-series-0 {
+.s0 {
   stroke: rgb(31, 119, 180);
   fill: rgb(31, 119, 180);  
 }
 
-.s1, .nv-series-1 {
+.s1 {
+  stroke: rgb(214, 39, 40);
+  fill: rgb(214, 39, 40);
+}
+
+.s2 {
   stroke: rgb(255, 127, 14);
   fill: rgb(255, 127, 14);
 }
 
-.s2, .nv-series-2 {
+.s3 {
   stroke: rgb(44, 160, 44);
   fill: rgb(44, 160, 44);
 }
 
-.s3, .nv-series-3 {
-  stroke: rgb(214, 39, 40);
-  fill: rgb(214, 39, 40);
+.s4 {
+  stroke: rgb(155, 30, 154);
+  fill: rgb(155, 30, 154);
+}
+
+.s5 {
+  stroke: rgb(0, 153, 199);
+  fill: rgb(0, 153, 199);
+}
+
+.s6 {
+  stroke: rgb(226, 76, 118);
+  fill: rgb(226, 76, 118);
 }
 
 circle.nv-legend-symbol {

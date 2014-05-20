@@ -3,10 +3,11 @@
 "use strict";
 
 var React = require('react');
-var XAxis = require('./XAxis.js');
-var YAxis = require('./YAxis.js');
-var Series = require('./Series.js');
-var Distribution = require('./Distribution.js');
+var XAxis = require('./XAxis');
+var YAxis = require('./YAxis');
+var Series = require('./Series');
+var Distribution = require('./Distribution');
+var Legend = require('./Legend');
 
 function determineRange(data, prop) {
   var min = data[0].values[0][prop];
@@ -62,25 +63,7 @@ module.exports = React.createClass({
         <g>{series}</g>
         <g transform="translate(0,420)">{xDists}</g>
         <g transform="translate(-8,0)">{yDists}</g>
-        <g className="nv-legendWrap"
-          transform="translate(0,-30)"><g className="nvd3 nv-legend"
-          transform="translate(0,5)"><g transform="translate(317,5)"><g
-          className="nv-series" transform="translate(0,5)"><circle
-          className="nv-legend-symbol nv-series-0" r="5"></circle><text
-          text-anchor="start" className="nv-legend-text" dy=".32em"
-          dx="8">Group 0</text></g><g className="nv-series"
-          transform="translate(72,5)"><circle className="nv-legend-symbol nv-series-1"
-          r="5"></circle><text text-anchor="start"
-          className="nv-legend-text" dy=".32em" dx="8">Group 1</text></g><g
-          className="nv-series" transform="translate(144,5)"><circle
-          className="nv-legend-symbol nv-series-2" r="5"></circle><text
-          text-anchor="start" className="nv-legend-text" dy=".32em"
-          dx="8">Group 2</text></g><g className="nv-series"
-          transform="translate(216,5)"><circle className="nv-legend-symbol nv-series-3"
-          r="5"></circle><text text-anchor="start"
-          className="nv-legend-text" dy=".32em" dx="8">Group
-        3</text></g></g></g></g><g
-          className="nv-controlsWrap"></g>
+        <Legend data={data}/>
       </g>
     </svg>;
   }
