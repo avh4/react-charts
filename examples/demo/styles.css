@@ -1,3 +1,8 @@
+svg {
+  width: 70%;
+  float: left;
+}
+
 text {
   font: normal 12px Arial;
 }

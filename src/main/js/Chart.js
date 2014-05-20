@@ -64,10 +64,10 @@ module.exports = React.createClass({
     var yDists = [];
     data.forEach(function(d, i) {
       var cl = "s" + i;
-      series.push(<Series className={"chart-series "+cl} data={d.values} normalize={normalize} key={cl}/>);
+      series.push(<Series className={"chart-series "+cl} data={d.values} normalize={normalize} onSelect={this.props.onSelect} key={cl}/>);
       xDists.push(<Distribution className={cl} y1="0" y2="8" data={d.values} normalize={normalize} key={cl}/>);
       yDists.push(<Distribution className={cl} x1="0" x2="8" data={d.values} normalize={normalize} key={cl}/>);
-    });
+    }, this);
 
     return <svg viewBox={(-yAxisWidth) + " 0 " + (width+yAxisWidth) + " " + (height+legendHeight+xAxisHeight)}>
       <g className="nvd3 nv-wrap nv-scatterChart" transform="translate(0,30)">
