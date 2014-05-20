@@ -44,28 +44,24 @@ module.exports = React.createClass({
     var legendHeight = 30;
     var yAxisWidth = 70;
     var xAxisHeight = 50;
+
+    var series = [];
+    var xDists = [];
+    var yDists = [];
+    data.forEach(function(d, i) {
+      var cl = "s" + i;
+      series.push(<Series className={"chart-series "+cl} data={d.values} normalize={normalize} key={cl}/>);
+      xDists.push(<Distribution className={cl} y1="0" y2="8" data={d.values} normalize={normalize} key={cl}/>);
+      yDists.push(<Distribution className={cl} x1="0" x2="8" data={d.values} normalize={normalize} key={cl}/>);
+    });
+
     return <svg viewBox={(-yAxisWidth) + " 0 " + (width+yAxisWidth) + " " + (height+legendHeight+xAxisHeight)}>
       <g className="nvd3 nv-wrap nv-scatterChart" transform="translate(0,30)">
         <XAxis min={xRange[0]} max={xRange[1]} normalize={normalize} format="0"/>
         <YAxis min={yRange[0]} max={yRange[1]} normalize={normalize} format="$0,0"/>
-        <g>
-          <Series className="chart-series s0" data={data[0].values} normalize={normalize}/>
-          <Series className="chart-series s1" data={data[1].values} normalize={normalize}/>
-          <Series className="chart-series s2" data={data[2].values} normalize={normalize}/>
-          <Series className="chart-series s3" data={data[3].values} normalize={normalize}/>
-        </g>
-        <g transform="translate(0,420)">
-          <Distribution className="s0" y1="0" y2="8" data={data[0].values} normalize={normalize}/>
-          <Distribution className="s1" y1="0" y2="8" data={data[1].values} normalize={normalize}/>
-          <Distribution className="s2" y1="0" y2="8" data={data[2].values} normalize={normalize}/>
-          <Distribution className="s3" y1="0" y2="8" data={data[3].values} normalize={normalize}/>
-        </g>
-        <g transform="translate(-8,0)">
-          <Distribution className="s0" x1="0" x2="8" data={data[0].values} normalize={normalize}/>
-          <Distribution className="s1" x1="0" x2="8" data={data[1].values} normalize={normalize}/>
-          <Distribution className="s2" x1="0" x2="8" data={data[2].values} normalize={normalize}/>
-          <Distribution className="s3" x1="0" x2="8" data={data[3].values} normalize={normalize}/>
-        </g>
+        <g>{series}</g>
+        <g transform="translate(0,420)">{xDists}</g>
+        <g transform="translate(-8,0)">{yDists}</g>
         <g className="nv-legendWrap"
           transform="translate(0,-30)"><g className="nvd3 nv-legend"
           transform="translate(0,5)"><g transform="translate(317,5)"><g

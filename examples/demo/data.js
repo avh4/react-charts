@@ -513,9 +513,6 @@ module.exports = [
         "netWorth": "http://www.celebritynetworth.com/richest-celebrities/singers/diana-krall-net-worth/"
     },
     {
-        "yearsUntilBreakout": 0
-    },
-    {
         "name": "Fiona Apple",
         "career": "Musician",
         "birthYear": 1977,
