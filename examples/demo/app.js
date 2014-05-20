@@ -15,6 +15,7 @@ function processData(input, groupField, xField, yField, sizeField) {
       group = {name: groupName, values: []};
       groupOrder.push(groupName);
     }
+    d.name = d.name || groupName;
     d.x = d[xField];
     d.y = d[yField];
     d.size = d[sizeField];

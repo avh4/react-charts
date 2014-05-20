@@ -44,12 +44,14 @@ module.exports = React.createClass({
     var xRange = determineRange(data, 'x');
     var yRange = determineRange(data, 'y');
     var sizeRange = determineRange(data, 'size');
+    var minSize = 2;
+    var maxSize = 25;
 
     function normalize(d) {
       return {
         x: linearScale(d.x, xRange, width),
         y: logScale(d.y, [yRange[1], yRange[0]], height),
-        size: linearScale(d.size, sizeRange, 25)
+        size: Math.max(minSize, linearScale(d.size, sizeRange, maxSize))
       };
     }
 
