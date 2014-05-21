@@ -33,7 +33,7 @@ module.exports = React.createClass({
       <g className="lines">{lines}</g>
       <line className="axis" y2={chartHeight}/>
       {labels}
-      <text transform="rotate(-90)" y="-63" x={-chartHeight/2}>Y Value</text>
+      <text transform="rotate(-90)" y="-63" x={-chartHeight/2}>{this.props.label}</text>
       <text dy={dy} y={chartHeight} x={textX}>{format(this.props.min)}</text>
       <text x={textX || chartWidth} dy={dy} y={textY || 0}>{format(this.props.max)}</text>
     </g>;

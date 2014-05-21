@@ -47,10 +47,13 @@ module.exports = React.createClass({
     var minSize = 2;
     var maxSize = 30;
 
+    var xScale = this.props.config.xAxis.scale === 'log' ? logScale : linearScale;
+    var yScale = this.props.config.yAxis.scale === 'log' ? logScale : linearScale;
+
     function normalize(d) {
       return {
-        x: linearScale(d.x, xRange, width),
-        y: logScale(d.y, [yRange[1], yRange[0]], height),
+        x: xScale(d.x, xRange, width),
+        y: yScale(d.y, [yRange[1], yRange[0]], height),
         size: Math.max(minSize, linearScale(d.size, sizeRange, maxSize))
       };
     }
@@ -71,8 +74,8 @@ module.exports = React.createClass({
 
     return <svg className="chart" viewBox={(-yAxisWidth) + " 0 " + (width+yAxisWidth) + " " + (height+legendHeight+xAxisHeight)}>
       <g className="nvd3 nv-wrap nv-scatterChart" transform="translate(0,30)">
-        <XAxis min={xRange[0]} max={xRange[1]} normalize={normalize} format="0"/>
-        <YAxis min={yRange[0]} max={yRange[1]} normalize={normalize} format="$0,0"/>
+        <XAxis label={this.props.config.xAxis.label} min={xRange[0]} max={xRange[1]} normalize={normalize} format={this.props.config.xAxis.format}/>
+        <YAxis label={this.props.config.yAxis.label} min={yRange[0]} max={yRange[1]} normalize={normalize} format={this.props.config.yAxis.format}/>
         <g>{series}</g>
         <g transform="translate(0,420)">{xDists}</g>
         <g transform="translate(-8,0)">{yDists}</g>

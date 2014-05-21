@@ -38,8 +38,9 @@ var App = React.createClass({
   },
   render: function() {
     var d = this.state.detail;
+    var config = { xAxis: { label: "Age", format: "0" }, yAxis: { label: "Net Worth", format: "$0,0", scale: "log" }};
     return <div className="root">
-      <Chart data={data} onSelect={this.doSelect}/>
+      <Chart data={data} onSelect={this.doSelect} config={config}/>
       <div className="tooltip">
         <h3><a href={d.bio}>{d.name}</a></h3>
         {d.career} ({d.knownFrom})<br/>
