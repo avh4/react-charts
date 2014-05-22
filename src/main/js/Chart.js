@@ -5,7 +5,7 @@
 var React = require('react');
 var XAxis = require('./XAxis');
 var YAxis = require('./YAxis');
-var Series = require('./Series');
+var ScatterPlot = require('./ScatterPlot');
 var Distribution = require('./Distribution');
 var Legend = require('./Legend');
 
@@ -67,7 +67,7 @@ module.exports = React.createClass({
     var yDists = [];
     data.forEach(function(d, i) {
       var cl = "s" + i;
-      series.push(<Series className={"chart-series "+cl} data={d.values} normalize={normalize} onSelect={this.props.onSelect} key={cl}/>);
+      series.push(<ScatterPlot className={"chart-series "+cl} data={d.values} normalize={normalize} onSelect={this.props.onSelect} key={cl}/>);
       xDists.push(<Distribution className={cl} y1="0" y2="8" data={d.values} normalize={normalize} key={cl}/>);
       yDists.push(<Distribution className={cl} x1="0" x2="8" data={d.values} normalize={normalize} key={cl}/>);
     }, this);
