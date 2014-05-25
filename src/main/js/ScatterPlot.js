@@ -9,7 +9,7 @@ module.exports = React.createClass({
     var data = this.props.data;
     var paths = data.map(function(d, i) {
       var p = this.props.normalize(d);
-      return <g onMouseOver={this.props.onSelect.bind(null, d)}>
+      return <g>
         <circle cx={p.x} cy={p.y} r={p.size} key={i}/>
         <text className="label-backing" x={p.x} y={p.y} dy="0.3em">{d.name}</text>
         <text x={p.x} y={p.y} dy="0.3em">{d.name}</text>

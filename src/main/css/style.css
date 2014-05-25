@@ -86,3 +86,8 @@
   stroke: rgb(226, 76, 118);
   fill: rgb(226, 76, 118);
 }
+
+.click-target {
+  stroke: none;
+  fill: transparent;
+}

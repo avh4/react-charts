@@ -69,7 +69,7 @@ module.exports = React.createClass({
     var yDists = [];
     data.forEach(function(d, i) {
       var cl = "s" + i;
-      series.push(<ScatterPlot className={"chart-series "+cl} data={d.values} normalize={normalize} onSelect={this.props.onSelect} key={cl}/>);
+      series.push(<ScatterPlot className={"chart-series "+cl} data={d.values} normalize={normalize} key={cl}/>);
       series.push(<LinePlot className={"chart-series "+cl} data={d.values} normalize={normalize} key={"line-"+cl}/>);
       xDists.push(<Distribution className={cl} y1="0" y2="8" data={d.values} normalize={normalize} key={cl}/>);
       yDists.push(<Distribution className={cl} x1="0" x2="8" data={d.values} normalize={normalize} key={cl}/>);
@@ -80,7 +80,7 @@ module.exports = React.createClass({
         <XAxis label={this.props.config.xAxis.label} min={xRange[0]} max={xRange[1]} normalize={normalize} format={this.props.config.xAxis.format}/>
         <YAxis label={this.props.config.yAxis.label} min={yRange[0]} max={yRange[1]} normalize={normalize} format={this.props.config.yAxis.format}/>
         <g>{series}</g>
-        <NearestPoints data={data} normalize={normalize}/>
+        <NearestPoints data={data} normalize={normalize} onSelect={this.props.onSelect}/>
         <g transform="translate(0,420)">{xDists}</g>
         <g transform="translate(-8,0)">{yDists}</g>
         <Legend data={data}/>
