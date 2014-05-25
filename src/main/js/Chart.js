@@ -9,6 +9,7 @@ var ScatterPlot = require('./ScatterPlot');
 var LinePlot = require('./LinePlot');
 var Distribution = require('./Distribution');
 var Legend = require('./Legend');
+var NearestPoints = require('./NearestPoints');
 
 function determineRange(data, prop) {
   var min = data[0].values[0][prop];
@@ -79,6 +80,7 @@ module.exports = React.createClass({
         <XAxis label={this.props.config.xAxis.label} min={xRange[0]} max={xRange[1]} normalize={normalize} format={this.props.config.xAxis.format}/>
         <YAxis label={this.props.config.yAxis.label} min={yRange[0]} max={yRange[1]} normalize={normalize} format={this.props.config.yAxis.format}/>
         <g>{series}</g>
+        <NearestPoints data={data} normalize={normalize}/>
         <g transform="translate(0,420)">{xDists}</g>
         <g transform="translate(-8,0)">{yDists}</g>
         <Legend data={data}/>

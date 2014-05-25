@@ -12,7 +12,9 @@
   "bugs": "https://github.com/avh4/react-charts/issues",
   "license": "MIT",
   "main": "target/main/js/index.js",
-  "files": ["target/main"],
+  "files": [
+    "target/main"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/avh4/react-charts.git"
@@ -32,6 +34,7 @@
     "jsx-loader": "~0.10.0",
     "webpack": "~1.0.0",
     "jasmine-node": "^1.14.3",
-    "react-tools": "^0.10.0"
+    "react-tools": "^0.10.0",
+    "d3-geom-voronoi": "0.0.0"
   }
 }

@@ -17,3 +17,8 @@
 .root .tooltip h3 {
   margin: 0;
 }
+
+.click-target {
+  stroke: #888;
+  fill: none;
+}
